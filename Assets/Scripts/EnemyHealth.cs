@@ -11,7 +11,8 @@ public class EnemyHealth : MonoBehaviour
   [SerializeField] GameObject hitVFX;
     public void takeDamage(float damage){
       Instantiate(hitVFX, this.transform.position, Quaternion.identity);
-       
+      //  GetComponent<EnemyAI>().OnDamageTaken();
+      BroadcastMessage("OnDamageTaken");
         hitPoints-=damage;
         if(hitPoints<=0){
             Instantiate(deathFX, this.transform.position, Quaternion.identity);

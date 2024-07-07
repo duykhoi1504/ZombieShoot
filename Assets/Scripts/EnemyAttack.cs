@@ -11,7 +11,9 @@ public class EnemyAttack : MonoBehaviour
     }
 
     // Update is called once per frame
-    
+    public void OnDamageTaken(){
+        Debug.Log("ONTAKENDAMAGE");
+    }
     public void AttackHitEvent(){
         if(target==null){return;}
         target.takeDamage(damage);
