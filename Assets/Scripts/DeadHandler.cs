@@ -14,6 +14,7 @@ public class DeadHandler : MonoBehaviour
    public void HandleDeath(){
      gameOverCanvas.enabled=true;
      Time.timeScale=0;
+     FindObjectOfType<SweaponSwitcher>().enabled=false;
      Cursor.lockState=CursorLockMode.None;    
      Cursor.visible=true;
 
