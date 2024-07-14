@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
+
 
 public class Ammo : MonoBehaviour
 {
@@ -11,12 +14,20 @@ public class Ammo : MonoBehaviour
     [System.Serializable]
     private class AmmoSlot
     {
+        public String ammoName;
         public AmmoType ammoType;
         public int ammoAmount;
+        public Sprite imageBullet;
     }
 
     public int GetCurrentAmmo(AmmoType ammoType){
         return GetAmmoSlot(ammoType).ammoAmount;
+    }
+     public String GetCurrentAmmoName(AmmoType ammoType){
+        return GetAmmoSlot(ammoType).ammoName;
+    }
+     public Sprite GetImageAmmo(AmmoType ammoType){
+        return GetAmmoSlot(ammoType).imageBullet;
     }
     public void ReduceCurrentAmmo(AmmoType ammoType){
        GetAmmoSlot(ammoType).ammoAmount--;
@@ -33,6 +44,8 @@ public class Ammo : MonoBehaviour
         }
         return null;
     }
+
+
     public void IncreaseAmmo(AmmoType ammoType, int amount){
         GetAmmoSlot(ammoType).ammoAmount += amount;
     }

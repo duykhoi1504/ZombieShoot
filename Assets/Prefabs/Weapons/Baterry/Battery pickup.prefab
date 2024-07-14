@@ -232,6 +232,7 @@ GameObject:
   - component: {fileID: 8819448341912900300}
   - component: {fileID: 3753952293752645436}
   - component: {fileID: 3112621201627427984}
+  - component: {fileID: 4428642995364305821}
   m_Layer: 0
   m_Name: Battery pickup
   m_TagString: Untagged
@@ -289,5 +290,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cee125f8f0caf2e42b3e90f316fdff9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  restoreAngle: 50
+  addIntensity: 5
+--- !u!114 &4428642995364305821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5824499083985446973}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cee125f8f0caf2e42b3e90f316fdff9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   restoreAngle: 90
-  addIntensity: 20
+  addIntensity: 50

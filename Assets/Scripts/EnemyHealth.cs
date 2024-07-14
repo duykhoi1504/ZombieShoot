@@ -16,7 +16,9 @@ public class EnemyHealth : MonoBehaviour
   }
   public void takeDamage(float damage)
   {
-    Instantiate(hitVFX, this.transform.position, Quaternion.identity);
+    // Instantiate(hitVFX, this.transform.position, Quaternion.identity);
+    GameObject impact = Instantiate(hitVFX, this.transform.position, Quaternion.identity);
+    Destroy(impact, 2);
     //  GetComponent<EnemyAI>().OnDamageTaken();
     BroadcastMessage("OnDamageTaken");
     hitPoints -= damage;
@@ -29,9 +31,12 @@ public class EnemyHealth : MonoBehaviour
   private void Die()
   {
     if (isDead) return;
-    isDead=true;
-    Instantiate(deathFX, this.transform.position, Quaternion.identity);
+    isDead = true;
+    GameObject impactDead = Instantiate(deathFX, this.transform.position, Quaternion.identity);
+    MusicPlayer.Instant.PLaySFX("dead");
+    Destroy(impactDead, 2);
     GetComponent<Animator>().SetTrigger("die");
+    Destroy(gameObject, 2);
 
   }
 }

@@ -21,6 +21,7 @@ public class BatteryPickup : MonoBehaviour
         if (other.gameObject.CompareTag("Player")){
             other.GetComponentInChildren<FlashLightSystem>().RestoreLightAngle(restoreAngle);
             other.GetComponentInChildren<FlashLightSystem>().AddLightIntensity(addIntensity);
+             MusicPlayer.Instant.PLaySFX("pickup");
             Destroy(gameObject);
         }
     }
